@@ -583,7 +583,7 @@
 <!-- MASTHEAD -->
 <header class="masthead fade-in">
   <div class="masthead-meta">
-    <span>Abril 28, 2026</span>
+    <span id="fecha-hoy"></span>
     <span>Colombia · Comunidad Andina · Europa · Estados Unidos</span>
     <span>Edición 001</span>
   </div>
@@ -952,6 +952,11 @@
 </footer>
 
 <script>
+  // Fecha dinámica en el masthead
+  const hoy = new Date();
+  const opciones = { day: 'numeric', month: 'long', year: 'numeric' };
+  document.getElementById('fecha-hoy').textContent =
+    hoy.toLocaleDateString('es-CO', opciones).toUpperCase();
   // Scroll-reveal
   const els = document.querySelectorAll('.fade-in');
   if ('IntersectionObserver' in window) {
